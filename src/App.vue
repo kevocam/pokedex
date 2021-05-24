@@ -1,30 +1,37 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
   <router-view />
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: "Lato", sans-serif;
+  font-size: 62.5%;
 }
 
-#nav {
-  padding: 30px;
+$yellow: rgba(236, 165, 57, 1);
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+$red: rgba(192, 14, 32, 1);
+$red-ligth: rgba(242, 37, 57, 1);
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+$gray: rgba(94, 94, 94, 1);
+$gray-ligth: rgba(191, 191, 191, 1);
+$gray-dark: rgba(53, 53, 53, 1);
+
+$white: rgba(245, 245, 245, 1);
+$white-ligth: rgba(249, 249, 249, 1);
+$white-dark: rgba(249, 249, 249, 1);
+$fontSecundary: "Montserrat";
+body {
+  font-size: 1.6rem;
+  background: $white-dark;
+}
+a {
+  text-decoration: none;
 }
 </style>
