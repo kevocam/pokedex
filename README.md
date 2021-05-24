@@ -2,17 +2,19 @@
 
 
 <h1 align="center">Hi 👋, I'm Pokédex App</h1>
-<a href="https://pokedexvuejsapp.netlify.app/#/">Probar Pokédex ahora!</a>
+
+ <a align="center"  target="_blank" href="https://pokedexvuejsapp.netlify.app/#/">👉👉👉 Probar Pokédex ahora!</a>
 <h3 align="center">Con tu pokedex, podrás guardar a tus pokemones, consultar su apariencia, peso, tamaño y tipo. Comparte sus habilidades con tus amigos.</h3>
 <a href="https://ibb.co/VjVhz00"><img src="https://i.ibb.co/VjVhz00/Screenshot-2021-05-24-pokedex.png" alt="Screenshot-2021-05-24-pokedex" border="0"></a>
 
 <ul>
-<li>Empece maquetando el proyecto, utilice el preprocesador Sass, definí variables del color, tipo de fuente.</li>
+<li>Empece maquetando el proyecto, utilice el preprocesador Sass, donde definí variables del color, tipo de fuente y resetee stylos, trato de usar rem </li>
 <li>Mobile first. 📱 </li>
-<li>Las variables de colores y  </li>
-<li>Dont Repeat Your code, me guié con este principio de còdigo.</li>
+<li>Uso la metodoloía BEM para nombrar las clases de los estilos.</li>
+<li>Dont Repeat Your code, me guié con este principio de código.</li>
+<li>Cree componentes, Button que recibe configuraciones, Modal que nos muestra el resumen del pokemon, Lost caundo no hay resultados, navigation, para movernos de favorites a All.</li>
 <li>Para las rutas utilice Vue Router.</li>
-<li>Maneje los datos con Vuex, no permite tener los datos disponibles para todos lo componentes.</li>
+<li>Maneje los datos con Vuex, ya que nos permite tener los datos disponibles para todos lo componentes y poder gestionar grandes cantidades.</li>
 <li>Utilice fetch para hacer las 2 llamadas a la API de Pokemon (https://pokeapi.co/), pudo haberse usado axios.</li>
 
 
