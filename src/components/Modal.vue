@@ -2,6 +2,7 @@
   <section class="overlay">
     <div class="modal fade-in">
       <div class="modal__header">
+        <!-- <div class="overlay"></div> -->
         <img :src="imagePoke" :alt="poke.name" class="modal__header--img" />
         <button class="modal__header--close" @click="closeModal">
           <svg
@@ -24,7 +25,7 @@
         <p>Height: {{ poke.height }}</p>
         <p>
           Types:
-          {{ poke.types ? poke.types.map((e) => e.type.name).toString() : "" }}
+          {{ poke.types ? poke.types.map((e) => e.type.name).toString() : " " }}
         </p>
       </div>
       <div class="modal__footer">
@@ -142,7 +143,11 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    position: relative; 
+    
+    background-color: #04020e;
+    background-blend-mode: screen;
+
     &--img {
       width: 180px;
       height: 180px;
@@ -162,6 +167,7 @@ export default {
   }
   &__content {
     padding: 20px 30px 0 30px;
+    text-transform: capitalize;
     p {
       margin-bottom: 10px;
       padding-bottom: 10px;
@@ -179,6 +185,7 @@ export default {
 .btn {
   margin: inherit;
 }
+
 .overlay {
   position: fixed;
   z-index: 1;

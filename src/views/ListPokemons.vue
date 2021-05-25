@@ -19,6 +19,7 @@
         </div>
         <div class="input__text">
           <input v-model="search" placeholder="Search" type="text" />
+          
         </div>
       </div>
     </div>
@@ -35,7 +36,8 @@
       >
         <div class="itemPokemon__text" @click="openModal(pokemon.name)">
           <p>
-            {{ pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) }}
+            {{pokemon.name}}
+            <!-- {{ pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) }} -->
           </p>
         </div>
         <div class="itemPokemon__badge" @click="savePoke(pokemon.name)">
@@ -119,10 +121,10 @@ export default {
     savePoke(id) {
       this.$store.dispatch("savePoke", id);
     },
-    query(search) {
-      console.log("hey");
-      this.$store.dispatch("searchPoke", search);
-    },
+    /* query(search) {  //opcion  al search
+      console.log(search)
+      this.$store.dispatch("searchPoke", search.toLowerCase());
+    }, */
   },
   created() {
     //llamamos al metodo en vuex genera la llamada de los pokemons
@@ -135,7 +137,7 @@ export default {
         return this.$store.state.filter.query;
       },
       set(val) {
-        this.$store.commit("SET_QUERY", val);
+        this.$store.commit("SET_QUERY", val.toLowerCase());
       },
     },
     allFavorites() {
@@ -202,7 +204,6 @@ export default {
 .itemPokemon {
   border-radius: 5px;
   margin: 10px;
-
   height: 60px;
   background-color: white;
   display: flex;

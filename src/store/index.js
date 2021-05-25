@@ -7,7 +7,7 @@ export default createStore({
     load: true,
     loadingStatus: "notLoading",
     todos: [],
-
+    cache: [],
     filter: {
       query: "",
       available: true,
@@ -44,22 +44,25 @@ export default createStore({
       payload;
     },
     SET_QUERY(state, query) {
-      if (query.length > 1) {
+      state.cache = state.todos
+      if (query.length ) {
         state.filter.query = query;
-        state.todos = state.todos.filter((item) => item.name.includes(query));
+        state.todos = state.todos.filter((item) => item.name.includes(state.filter.query));
+      }else{
+        state.todos = state.cache
       }
     },
   },
   getters: {
     filteredPokemon(state) {
       let todos = state.todos;
-      if (state.filter.query.length > 2) {
+      if (state.filter.query.length > 1) {
         return todos.filter((movie) =>
-          movie.name.toLowerCase().includes(state.filter.query)
+          movie.name.toLowerCase().includes(state.filter.query.toLowerCase())
         );
       }
       return todos;
-    },
+    }, 
   },
   actions: {
     //llamada a la API todos pokemones
@@ -68,6 +71,7 @@ export default createStore({
       fetch("https://pokeapi.co/api/v2/pokemon")
         .then((data) => data.json())
         .then((data) => {
+          console.log(data.results)
           context.commit("SET_LOADING_STATUS", false);
           context.commit("SET_TODOS", data.results);
         });
