@@ -134,7 +134,7 @@ export default {
   computed: {
     search: {
       get() {
-        return this.$store.state.filter.query;
+        return this.$store.state.filter.query.toLowerCase();
       },
       set(val) {
         this.$store.commit("SET_QUERY", val.toLowerCase());
